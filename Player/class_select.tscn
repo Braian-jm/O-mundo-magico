@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c4xaygh362qks"]
+
+[ext_resource type="Script" uid="uid://cbwxwjd16358c" path="res://Player/class_select.gd" id="1_xalu6"]
+
+[node name="ClassSelect" type="Control" unique_id=1743030358]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xalu6")
+
+[node name="guerreiro" type="Button" parent="." unique_id=1057332257]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44900003
+anchor_top = 0.36800003
+anchor_right = 0.57900006
+anchor_bottom = 0.43600002
+offset_left = -0.24804688
+offset_top = 1.5359802
+offset_right = 0.99194336
+offset_bottom = 9.471985
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/icon_pressed_color = Color(1, 1, 0.24313726, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.15686275, 1, 1)
+text = "Guerreiro"
+
+[node name="arqueiro" type="Button" parent="." unique_id=1991485775]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47100002
+anchor_top = 0.48000002
+anchor_right = 0.56200004
+anchor_bottom = 0.545
+offset_left = 0.40795898
+offset_top = -0.040008545
+offset_right = -0.42407227
+offset_bottom = -0.16000366
+text = "Arqueiro"
+
+[node name="select" type="Button" parent="." unique_id=288999149]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.845
+anchor_top = 0.79300004
+anchor_right = 0.92200005
+anchor_bottom = 0.841
+offset_left = -0.44006348
+offset_top = 0.13598633
+offset_right = -0.14404297
+offset_bottom = 0.031982422
+text = "Selecionar"
+
+[node name="mago" type="Button" parent="." unique_id=1654240081]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/icon_pressed_color = Color(0.9764706, 0.84313726, 0, 1)
+
+[connection signal="pressed" from="guerreiro" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="arqueiro" to="." method="_on_arqueiro_pressed"]
+[connection signal="pressed" from="select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="mago" to="." method="_on_mago_pressed"]
