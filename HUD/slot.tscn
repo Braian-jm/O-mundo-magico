@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ckl0nsc1pv8sk"]
+
+[ext_resource type="Script" uid="uid://couu6kejwqkwi" path="res://HUD/slot_inventario.gd" id="1_c24ra"]
+
+[node name="slot" type="PanelContainer" unique_id=1376219901]
+custom_minimum_size = Vector2(64, 64)
+script = ExtResource("1_c24ra")
+
+[node name="icone" type="TextureRect" parent="." unique_id=1032880099]
+layout_mode = 2
+stretch_mode = 5
+
+[node name="amount" type="Label" parent="." unique_id=1059036566]
+layout_mode = 2

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bprscp3aujbxo"]
+
+[ext_resource type="Script" uid="uid://c44dhihorhq00" path="res://HUD/hotbar.gd" id="1_r24te"]
+
+[node name="hotbar" type="Control" unique_id=1141191427]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_vertical = 0
+script = ExtResource("1_r24te")
+
+[node name="SlotsContainer" type="HBoxContainer" parent="." unique_id=2063607017]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

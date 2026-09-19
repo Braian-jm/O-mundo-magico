@@ -6,17 +6,17 @@ var classe_escolhendo
 
 
 
-func _on_button_pressed(bt) -> void:
+func _on_button_pressed() -> void:
 	classe_escolhendo = Classes.guerreiro()
 
 func _on_arqueiro_pressed() -> void:
 	classe_escolhendo = Classes.arqueiro()
 
 func _on_select_pressed() -> void:
+	if classe_escolhendo == null: 
+		return
 	Classes.selected_class = classe_escolhendo
 	get_tree().change_scene_to_file("res://Mundo/mundo_teste.tscn")
-
-
 
 func _on_mago_pressed() -> void:
 	classe_escolhendo = Classes.mago()

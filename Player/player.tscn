@@ -15,5 +15,5 @@ gravity = 250.0
 texture = ExtResource("2_btcbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332938676]
-position = Vector2(0, -3)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_bhunq")

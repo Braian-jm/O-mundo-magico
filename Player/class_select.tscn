@@ -24,8 +24,6 @@ offset_right = 0.99194336
 offset_bottom = 9.471985
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/icon_pressed_color = Color(1, 1, 0.24313726, 1)
-theme_override_colors/icon_hover_color = Color(1, 0.15686275, 1, 1)
 text = "Guerreiro"
 
 [node name="arqueiro" type="Button" parent="." unique_id=1991485775]
@@ -56,9 +54,12 @@ text = "Selecionar"
 
 [node name="mago" type="Button" parent="." unique_id=1654240081]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 570.0
+offset_top = 371.0
+offset_right = 621.0
+offset_bottom = 402.0
 theme_override_colors/icon_pressed_color = Color(0.9764706, 0.84313726, 0, 1)
+text = "Mago"
 
 [connection signal="pressed" from="guerreiro" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="arqueiro" to="." method="_on_arqueiro_pressed"]
