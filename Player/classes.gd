@@ -7,6 +7,7 @@ static func guerreiro() -> CharacterClass:
 	c.max_mana = 10; 
 	c.strength = 15; 
 	c.speed = 225
+	c.weapon = "sword"
 	return c
 static func arqueiro() -> CharacterClass:
 	var c := CharacterClass.new()

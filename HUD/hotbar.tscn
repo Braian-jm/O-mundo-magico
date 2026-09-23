@@ -14,3 +14,15 @@ script = ExtResource("1_r24te")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="arma slot" type="PanelContainer" parent="." unique_id=147801942]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_bottom = 56.0
+grow_horizontal = 0
+
+[node name="arma_img" type="TextureRect" parent="arma slot" unique_id=1913235562]
+layout_mode = 2

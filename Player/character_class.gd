@@ -7,3 +7,4 @@ class_name CharacterClass
 @export var max_mana: int 
 @export var strength: int 
 @export var speed: float 
+@export var weapon: String; 

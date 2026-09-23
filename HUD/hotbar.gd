@@ -5,11 +5,14 @@ extends Control
 const SlotCena = preload("res://HUD/slot.tscn") # ajuste o caminho conforme onde você salvou
 
 @onready var slots_container: HBoxContainer = $SlotsContainer
+@onready var arma_img := $"arma slot/arma_img"
 
 # Array pra guardar as referências dos slots visuais já criados.
 var slots_visuais: Array = []
 
 func _ready() -> void:
+	arma_img.texture = Inventario.arma_atual; 
+	
 	criar_slots_visuais()
 	
 	# Conecta nossa função "atualizar_visual" ao sinal do Inventario.

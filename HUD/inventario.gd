@@ -2,20 +2,19 @@ extends Node
 
 # Quantos slots a hotbar tem. Ajuste esse número como quiser.
 const NUMERO_DE_SLOTS = 8
-
+var arma_atual: String; 
 # Array de Dictionaries. Cada posição representa um slot.
 # Um slot vazio é representado por um Dictionary vazio {}.
 var slots: Array = []
 
 func _ready() -> void:
+	var arma_atual_tex = arma_atual + ".png"
 	# Preenche o array com slots vazios na inicialização do jogo.
 	for i in range(NUMERO_DE_SLOTS):
 		slots.append({})
-	
 	# "emit_signal" ou o "emit" abaixo avisa qualquer interessado (a UI, por exemplo)
 	# que o inventário mudou, sem o Inventario precisar saber quem está ouvindo.
 	# Isso é chamado de "signal" (sinal) — um jeito de comunicação desacoplada no Godot.
-
 # Sinal customizado: outros scripts podem "escutar" quando o inventário muda.
 signal inventario_alterado
 
@@ -43,7 +42,6 @@ func remover_item(index: int, quantidade: int = 1) -> void:
 		return
 	if slots[index].is_empty():
 		return
-	
 	slots[index]["quantidade"] -= quantidade
 	if slots[index]["quantidade"] <= 0:
 		slots[index] = {} # esvazia o slot
