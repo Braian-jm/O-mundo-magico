@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3dwe1i2kvwvq"]
+
+[ext_resource type="Script" uid="uid://ce6on4ova1gys" path="res://ataques/boladefogo.gd" id="1_lnjkj"]
+[ext_resource type="Texture2D" uid="uid://cxmf8ru6n1y7x" path="res://icon.svg" id="2_ay26g"]
+
+[node name="boladefogo" type="CharacterBody2D" unique_id=46509432]
+script = ExtResource("1_lnjkj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=660809095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1802823673]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=644276719]
+position = Vector2(-36.5, -36)
+scale = Vector2(0.4296875, 0.4375)
+texture = ExtResource("2_ay26g")

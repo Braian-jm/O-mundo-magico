@@ -18,7 +18,7 @@ anchor_left = 0.44900003
 anchor_top = 0.36800003
 anchor_right = 0.57900006
 anchor_bottom = 0.43600002
-offset_left = -0.24804688
+offset_left = 3.7519531
 offset_top = 1.5359802
 offset_right = 0.99194336
 offset_bottom = 9.471985
@@ -33,10 +33,10 @@ anchor_left = 0.47100002
 anchor_top = 0.48000002
 anchor_right = 0.56200004
 anchor_bottom = 0.545
-offset_left = 0.40795898
-offset_top = -0.040008545
-offset_right = -0.42407227
-offset_bottom = -0.16000366
+offset_left = -20.592041
+offset_top = -5.0400085
+offset_right = 19.575928
+offset_bottom = 3.8399963
 text = "Arqueiro"
 
 [node name="select" type="Button" parent="." unique_id=288999149]
@@ -54,12 +54,24 @@ text = "Selecionar"
 
 [node name="mago" type="Button" parent="." unique_id=1654240081]
 layout_mode = 0
-offset_left = 570.0
-offset_top = 371.0
-offset_right = 621.0
-offset_bottom = 402.0
+offset_left = 522.0
+offset_top = 376.0
+offset_right = 670.0
+offset_bottom = 426.0
 theme_override_colors/icon_pressed_color = Color(0.9764706, 0.84313726, 0, 1)
 text = "Mago"
+
+[node name="Info" type="Label" parent="." unique_id=1003207066]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.78800005
+anchor_top = 0.059000004
+anchor_right = 0.95100003
+anchor_bottom = 0.40300003
+offset_left = 0.22393799
+offset_top = -0.23200226
+offset_right = 0.44799805
+offset_bottom = -0.14401245
 
 [connection signal="pressed" from="guerreiro" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="arqueiro" to="." method="_on_arqueiro_pressed"]

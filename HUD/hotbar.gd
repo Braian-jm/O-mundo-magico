@@ -11,7 +11,7 @@ const SlotCena = preload("res://HUD/slot.tscn") # ajuste o caminho conforme onde
 var slots_visuais: Array = []
 
 func _ready() -> void:
-	arma_img.texture = Inventario.arma_atual; 
+#	arma_img.texture = Inventario.arma_atual; 
 	
 	criar_slots_visuais()
 	

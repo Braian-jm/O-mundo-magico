@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bsmbvnqayioel" path="res://Player/player.tscn" id="1_6umjo"]
 [ext_resource type="Texture2D" uid="uid://cxmf8ru6n1y7x" path="res://icon.svg" id="2_ejjm0"]
 [ext_resource type="PackedScene" uid="uid://bprscp3aujbxo" path="res://HUD/hotbar.tscn" id="3_ejjm0"]
+[ext_resource type="PackedScene" uid="uid://ru776mc8wdyv" path="res://NPC/npc.tscn" id="4_ibir4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(1166, 51)
@@ -33,3 +34,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Node2D" parent="." unique_id=1708727199 instance=ExtResource("4_ibir4")]
+position = Vector2(536, 197)

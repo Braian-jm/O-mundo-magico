@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://ru776mc8wdyv"]
+
+[ext_resource type="Script" uid="uid://h2dipscfh7j1" path="res://node_2d.gd" id="1_72fic"]
+[ext_resource type="Texture2D" uid="uid://cxmf8ru6n1y7x" path="res://icon.svg" id="2_3brfw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72fic"]
+size = Vector2(485, 336)
+
+[node name="Node2D" type="Node2D" unique_id=1708727199]
+script = ExtResource("1_72fic")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2023740102]
+position = Vector2(359, 337)
+texture = ExtResource("2_3brfw")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1346551142]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=237837498]
+position = Vector2(362, 340)
+shape = SubResource("RectangleShape2D_72fic")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=43355033]
+visible = false
+offset_left = 269.0
+offset_top = 231.0
+offset_right = 441.0
+offset_bottom = 254.0
+text = "Clique E para interagir"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=488729441]
+
+[node name="ShopMenu" type="Control" parent="CanvasLayer" unique_id=1920232026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ShopMenu" unique_id=51819193]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.15900001
+anchor_right = 0.95600003
+anchor_bottom = 0.83300006
+offset_left = -8.0
+offset_top = -0.03200531
+offset_right = -0.31201172
+offset_bottom = 0.21594238
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ShopMenu/Panel" unique_id=1326431164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -131.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="buy_life_pt" type="Button" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer" unique_id=20390774]
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pocao de vida
+cura 50 de hp "
+
+[node name="buy_spd_pt" type="Button" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer" unique_id=187842861]
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pocao de velocidade
+te deixa mais rapido"
+
+[node name="buy_str_pt" type="Button" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer" unique_id=126265734]
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Pocao de forca 
+te faz dar mais dano
+"
+
+[node name="buy_mana_pt" type="Button" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer" unique_id=1886001796]
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+size_flags_vertical = 3
+text = "pocao de mana
+restaura 50 de mana"
+
+[node name="Label" type="Label" parent="CanvasLayer/ShopMenu/Panel" unique_id=1826219467]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 20.0
+offset_right = 465.0
+offset_bottom = 43.0
+text = "Loja de Pocoes"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/ShopMenu/Panel" unique_id=984615627]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.76900005
+anchor_top = 0.162
+anchor_right = 0.9850001
+anchor_bottom = 0.82600003
+offset_left = 0.12298584
+offset_top = -50.794
+offset_right = -6.005066
+offset_bottom = 25.037994
+
+[node name="dinheiro" type="Label" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer2" unique_id=1772880827]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="precoPocao1" type="Label" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer2" unique_id=261445649]
+custom_minimum_size = Vector2(0, 70)
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+text = "R$ 10,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="precoPocao2" type="Label" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer2" unique_id=1517588900]
+custom_minimum_size = Vector2(0, 70)
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+text = "R$ 20,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="precoPocao3" type="Label" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer2" unique_id=1897959973]
+custom_minimum_size = Vector2(0, 70)
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+text = "R$ 25,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="precoPocao4" type="Label" parent="CanvasLayer/ShopMenu/Panel/VBoxContainer2" unique_id=1884291762]
+custom_minimum_size = Vector2(0, 70)
+custom_maximum_size = Vector2(400, 70)
+layout_mode = 2
+text = "R$ 10,00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="pressed" from="CanvasLayer/ShopMenu/Panel/VBoxContainer/buy_life_pt" to="." method="_on_buy_life_pt_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopMenu/Panel/VBoxContainer/buy_spd_pt" to="." method="_on_buy_spd_pt_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopMenu/Panel/VBoxContainer/buy_str_pt" to="." method="_on_buy_str_pt_pressed"]
+[connection signal="pressed" from="CanvasLayer/ShopMenu/Panel/VBoxContainer/buy_mana_pt" to="." method="_on_buy_mana_pt_pressed"]

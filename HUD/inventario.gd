@@ -3,6 +3,7 @@ extends Node
 # Quantos slots a hotbar tem. Ajuste esse número como quiser.
 const NUMERO_DE_SLOTS = 8
 var arma_atual: String; 
+var moedas:int = 100
 # Array de Dictionaries. Cada posição representa um slot.
 # Um slot vazio é representado por um Dictionary vazio {}.
 var slots: Array = []
@@ -47,3 +48,13 @@ func remover_item(index: int, quantidade: int = 1) -> void:
 		slots[index] = {} # esvazia o slot
 	
 	inventario_alterado.emit()
+
+func adicionar_moedas(valor: int):
+	moedas += valor
+
+
+func remover_moedas(valor: int) -> bool:
+	if moedas >= valor:
+		moedas -= valor
+		return true
+	return false

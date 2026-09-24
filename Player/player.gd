@@ -5,16 +5,15 @@ var max_health;
 var vida_atual;
 var max_mana;
 var dano;
+var mana_atual;  
 var classe_atual:CharacterClass 
+var ataque = preload("res://ataques/boladefogo.tscn")
+@onready var ataque_cooldown: Timer = $ataque_cooldown
+
+
 func _ready() -> void:
 	aplly_class(Classes.selected_class)
-	Inventario.adicionar_item({
-		"nome": "life_pot",
-		"quantidade": 2,
-		"textura": preload("res://icon.svg"),
-		"efeito": "curar",
-		"forca": 30
-	})
+
 func _input(event: InputEvent) -> void:
 	vida_atual = max_health
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor(): 
@@ -23,12 +22,17 @@ func _input(event: InputEvent) -> void:
 	for i in range(8):
 		if Input.is_action_just_pressed("hotbar_" + str(i + 1)):
 			usar_item_da_hotbar(i)
+	if Input.is_action_just_pressed("ataque") and ataque_cooldown.time_left <= 0: 
+		atacar()
+		
+		
 func _physics_process(delta: float) -> void:
 	var direcao = Input.get_axis("A","D");
 	velocity.x = direcao * SPEED
 	if not is_on_floor(): 
 		velocity.y += gravity * delta; 
 	move_and_slide()
+
 func aplly_class(data: CharacterClass): 
 	classe_atual = data
 	max_health = data.max_health
@@ -36,17 +40,30 @@ func aplly_class(data: CharacterClass):
 	dano = data.strength
 	SPEED = data.speed
 	print(SPEED)
+
 func usar_item_da_hotbar(indice: int) -> void:
 	if indice < 0 or indice >= Inventario.slots.size():
 		return
 	var item = Inventario.slots[indice]
 	if item.is_empty():
 		return
-	
 	usar_item(item) # faltava isso
 	Inventario.remover_item(indice, 1) # consome uma unidade do item (opcional, mas provavelmente você quer isso)
+
 func usar_item(item: Dictionary): 
 	match item.get("efeito", ""): 
 		"curar": 
 			vida_atual += item.get("forca", 0)
 			print(vida_atual)
+		"forte":
+			dano += item.get("forca", 0)
+		"speed":
+			SPEED += item.get("forca", 0)
+		"regen":
+			mana_atual += item.get("forca", 0)
+
+func atacar(): 
+	var ataque_intance = ataque.instantiate()
+	self.add_child(ataque_intance)
+	ataque_intance.global_position = self.global_position
+	ataque_cooldown.start();

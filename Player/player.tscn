@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(127, 121)
 
-[node name="player" type="CharacterBody2D" unique_id=1447888482]
+[node name="player" type="CharacterBody2D" unique_id=1447888482 groups=["player"]]
 position = Vector2(599, 472)
 script = ExtResource("1_4ntmi")
 gravity = 250.0
@@ -17,3 +17,7 @@ texture = ExtResource("2_btcbx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1332938676]
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="ataque_cooldown" type="Timer" parent="." unique_id=1740380678]
+wait_time = 0.75
+one_shot = true
