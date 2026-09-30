@@ -9,6 +9,8 @@ var mana_atual;
 var classe_atual:CharacterClass 
 var ataque = preload("res://ataques/boladefogo.tscn")
 @onready var ataque_cooldown: Timer = $ataque_cooldown
+@onready var raios: Node2D = $Raios
+
 
 
 func _ready() -> void:
@@ -24,8 +26,8 @@ func _input(event: InputEvent) -> void:
 			usar_item_da_hotbar(i)
 	if Input.is_action_just_pressed("ataque") and ataque_cooldown.time_left <= 0: 
 		atacar()
-		
-		
+	if Input.is_action_just_pressed("E"): 
+		raios.atacar()
 func _physics_process(delta: float) -> void:
 	var direcao = Input.get_axis("A","D");
 	velocity.x = direcao * SPEED

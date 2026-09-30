@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://crfhgjc54xg33" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://cxmf8ru6n1y7x" path="res://icon.svg" id="2_btcbx"]
+[ext_resource type="PackedScene" uid="uid://di8kq3w4hh8v2" path="res://ataques/raios.tscn" id="2_gwnis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(127, 121)
@@ -10,6 +11,9 @@ size = Vector2(127, 121)
 position = Vector2(599, 472)
 script = ExtResource("1_4ntmi")
 gravity = 250.0
+
+[node name="Raios" parent="." unique_id=801379070 instance=ExtResource("2_gwnis")]
+position = Vector2(3, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=345839680]
 texture = ExtResource("2_btcbx")
